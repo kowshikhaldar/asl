@@ -17,7 +17,16 @@ $fname_flag = $lname_flag = $dob_flag = $phone_flag = $gender_flag = $email_flag
 
 $redir_flag=1;
 
+$pro_pic=$cv =$aq=$cert="";
+$pro_pic_flag=$cv_flag =$aq_flag=$cert_flag="";
+
+
+
+
 if (isset($_REQUEST["submt"])) {
+
+ 
+}
     //firstname condition
     if (!empty($_REQUEST["fname"])) {
        
@@ -245,6 +254,52 @@ if (isset($_REQUEST["submt"])) {
         $redir_flag=0;
 
     }
+    //file upload handling
+    if ($_FILES["pro_pic"]["error"]==0) {
+        $pro_pic=$_FILES["pro_pic"];
+        if (move_uploaded_file($pro_pic["tmp_name"],$fullpath."/")) {
+            $pro_pic_flag="file uploaded successfully";
+        }
+
+    }else{
+        $pro_pic_flag="Something went Wrong While Uploading";
+        $redir_flag=0;
+    }
+    if ($_FILES["cv"]["error"]==0) {
+        $cv=$_FILES["cv"];
+
+    }else{
+        $cv_flag="Something went Wrong While Uploading";
+        $redir_flag=0;
+    }
+    if ($_FILES["aq"]["error"]==0) {
+        $aq=$_FILES["aq"];
+
+    }else{
+        $aq_flag="Something went Wrong While Uploading";
+        $redir_flag=0;
+    }
+
+    if ($_FILES["cert"]["error"]==0) {
+        $cert=$_FILES["cert"];
+        
+
+    }else{
+        $cert_flag="Something went Wrong While Uploading";
+        $redir_flag=0;
+    }
+    if($redir_flag==0){
+
+
+        
+       
+        
+    }
+
+
+
+
+
 
     if($redir_flag==1)
     {

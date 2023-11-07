@@ -1,7 +1,6 @@
 <?php
 include "../controller/process_it_s_reg.php";
 
-
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +48,7 @@ include "../controller/process_it_s_reg.php";
                 <td>Picture:</td>
                 <td>
                 <input type="file" name="pro_pic" accept="image/*">(Passport size Clear Picture)
-                </td>
+                </td><td><?php echo $pro_pic_flag; ?></td>
                
             </tr>
             
@@ -110,6 +109,7 @@ include "../controller/process_it_s_reg.php";
             <tr>
                 <td>CV:</td>
                 <td><input type="file" name="cv" accept=".pdf">Only .pdf Allowed</td>
+                <td><?php echo $cv_flag; ?></td>
                
             </tr>
             <tr>
@@ -117,6 +117,7 @@ include "../controller/process_it_s_reg.php";
                 <td>
                     <input type="file" name="aq" accept=".zip, .rar">(make the folder of document to zip)
                 </td>
+                <td><?php echo $aq_flag; ?></td>
                
             </tr>
             <tr>
@@ -124,6 +125,7 @@ include "../controller/process_it_s_reg.php";
                 <td>
                 <input type="file" name="cert" accept=".zip, .rar">(make the folder of document to zip)
                 </td>
+                <td><?php echo $cert_flag; ?></td>
                
             </tr>
             <tr>
