@@ -256,7 +256,7 @@ if (isset($_REQUEST["submt"])) {
     }
     //file upload handling
     if ($_FILES["pro_pic"]["error"]==0) {
-       
+        $pro_pic=$_FILES["pro_pic"];
 
     }else{
         $pro_pic_flag="Something went Wrong While Uploading";
@@ -285,13 +285,24 @@ if (isset($_REQUEST["submt"])) {
         $cert_flag="Something went Wrong While Uploading";
         $redir_flag=0;
     }
+    if($redir_flag==0){
+
+
+        
+       
+        
+    }
+
+
+
+
+
 
     if($redir_flag==1)
     {
         redirectp("reg_success.php");
 
     }
-
 
 
 
