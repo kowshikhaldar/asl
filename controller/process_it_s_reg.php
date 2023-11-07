@@ -26,7 +26,7 @@ $pro_pic_flag=$cv_flag =$aq_flag=$cert_flag="";
 if (isset($_REQUEST["submt"])) {
 
  
-}
+
     //firstname condition
     if (!empty($_REQUEST["fname"])) {
        
@@ -256,10 +256,7 @@ if (isset($_REQUEST["submt"])) {
     }
     //file upload handling
     if ($_FILES["pro_pic"]["error"]==0) {
-        $pro_pic=$_FILES["pro_pic"];
-        if (move_uploaded_file($pro_pic["tmp_name"],$fullpath."/")) {
-            $pro_pic_flag="file uploaded successfully";
-        }
+       
 
     }else{
         $pro_pic_flag="Something went Wrong While Uploading";
@@ -288,18 +285,6 @@ if (isset($_REQUEST["submt"])) {
         $cert_flag="Something went Wrong While Uploading";
         $redir_flag=0;
     }
-    if($redir_flag==0){
-
-
-        
-       
-        
-    }
-
-
-
-
-
 
     if($redir_flag==1)
     {
