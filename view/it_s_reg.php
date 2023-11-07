@@ -1,3 +1,7 @@
+<?php
+include "../controller/process_it_s_reg.php";
+?>
+
 <!DOCTYPE html>
 <html >
 <head>
@@ -11,32 +15,32 @@
             
             <tr>
                 <td>First Name:</td>
-                <td><input type="text" name="fname" ></td>
+                <td><input type="text" name="fname" ><?php echo $fname_flag; ?></td>
             </tr>
             <tr>
                 <td>Last Name:</td>
-                <td><input type="text" name="lname" ></td>
+                <td><input type="text" name="lname" ><?php echo $lname_flag; ?></td>
             </tr>
             <tr>
                 <td>Date Of Birth:</td>
-                <td><input type="date" name="dob" ></td>
+                <td><input type="date" name="dob" ><?php echo $dob_flag; ?></td>
             </tr>
             <tr>
                 <td>Phone Number:</td>
-                <td><input type="text" name="phone" value="+880" ></td>
+                <td><input type="text" name="phone" value="+880" ><?php echo $phone_flag; ?></td>
             </tr>
 
             <tr>
                 <td>Gender:</td>
                 <td>
                     <input type="radio" name="gender" value="male" >Male<br>
-                    <input type="radio" name="gender" value="female" > Female
+                    <input type="radio" name="gender" value="female" > Female<?php echo $gender_flag; ?>
                 </td>
             </tr>
             
             <tr>
                 <td>Email:</td>
-                <td><input type="text" name="email" placeholder="abc@mail.com"></td>
+                <td><input type="text" name="email" placeholder="abc@mail.com"><?php echo $email_flag; ?></td>
             </tr>
 
             <tr>
@@ -50,12 +54,12 @@
             <tr>
                 <td>Country:</td>
                 <td><select name="country">
-                    <option value="BD">Bangladesh</option>
+                    <option value="BD" selected="selected">Bangladesh</option>
                     <option value="INDIA">India</option>
                     <option value="US">United States</option>
                     <option value="CHINA">China</option>
                     <option value="RUSSIA">Russia</option>
-                </select></td>
+                </select><?php echo $country_flag; ?></td>
             </tr>
             <tr>
                 <td>City:</td>
@@ -125,7 +129,7 @@
             
                 
                 <td>
-                <input type="checkbox" id="acceptPolicy"> I have read and accept the <a href="terms.html" target="_blank">Terms and Conditions</a><br>
+                <input type="checkbox" id="acceptPolicy" name="terms"> I have read and accept the <a href="terms.html" target="_blank">Terms and Conditions</a><br>
                     <input type="submit" value="Submit" name="submt">
                     <br>
                     <input type="reset" value="Reset"></td>
