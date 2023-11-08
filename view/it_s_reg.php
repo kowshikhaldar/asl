@@ -1,6 +1,8 @@
 <?php
 include "../controller/process_it_s_reg.php";
 
+
+
 ?>
 
 <!DOCTYPE html>

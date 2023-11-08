@@ -1,23 +1,49 @@
 <?php
+
+//emptywarn() will return field can not be blank.used give blank field warning 
 function emptywarn()
 {
     return "Field can not be Blanked";
 }
+//redirectp() takes link and redirect to that link
 function redirectp($link)
 {
     header("Location: $link");
     exit;
 }
 
+//uploadFile(superglobalveriable,destination,xname=uniquely indentify) function for uploading file to specific destination
+function uploadFile($filegot,$target,$xname)
+{
+    $target=$target."/";
+    if(!file_exists($target))
+    {
+        mkdir($target,0777,true);
+    }
+    if(move_uploaded_file($filegot["tmp_name"],$target.$xname.basename($filegot["name"]))){
+        return $target.$xname.basename($filegot["name"]);
+
+    }else {
+        return false;
+    }
 
 
+}
+
+
+//variables
  $fname = $lname = $dob = $phone = $gender = $email = $country = $city = $addrs = $exp = $edu = $skill = $availablity = $reason = $reference =$terms= "";
 
+ //variable for flag
 $fname_flag = $lname_flag = $dob_flag = $phone_flag = $gender_flag = $email_flag = $country_flag = $city_flag = $addrs_flag = $exp_flag = $edu_flag = $skill_flag = $availablity_flag = $reason_flag = $reference_flag = $terms_flag = "";
 
+//flag for checking no error
 $redir_flag=1;
 
+//variables for files
 $pro_pic=$cv =$aq=$cert="";
+
+//variable for file_flag 
 $pro_pic_flag=$cv_flag =$aq_flag=$cert_flag="";
 
 
@@ -27,7 +53,7 @@ if (isset($_REQUEST["submt"])) {
 
  
 
-    //firstname condition
+    //firstname validation
     if (!empty($_REQUEST["fname"])) {
        
         if (!(strlen($_REQUEST["fname"]) < 30 && !preg_match("/[\d]+|\s|\W/i",$_REQUEST["fname"]))) {
@@ -46,7 +72,7 @@ if (isset($_REQUEST["submt"])) {
         $redir_flag=0;
     }
 
-    //lastname condition
+    //lastname validation
 
     if (!empty($_REQUEST["lname"])) {
         
@@ -68,7 +94,7 @@ if (isset($_REQUEST["submt"])) {
 
     }
 
-    //date of birth
+    //date of birth validation
     if (!empty($_REQUEST["dob"])) {
        
             $dob =$_REQUEST["dob"];
@@ -80,7 +106,7 @@ if (isset($_REQUEST["submt"])) {
 
     }
 
-    //phone number
+    //phone number validation
     if (!empty($_REQUEST["phone"])) {
         if(strlen($_REQUEST["phone"])>8 && !preg_match("/\s|\W|[a-z]/i",substr($_REQUEST["phone"],1))) {
             
@@ -100,7 +126,7 @@ if (isset($_REQUEST["submt"])) {
         $redir_flag=0;
 
     }
-    //gender
+    //gender validation
 
     if (!empty($_REQUEST["gender"])) {
         $gender=$_REQUEST["gender"];
@@ -113,11 +139,23 @@ if (isset($_REQUEST["submt"])) {
 
     }
 
-    //email
+    //email validation
 
     if (!empty($_REQUEST["email"])) {
-        if(filter_var($_REQUEST["email"], FILTER_VALIDATE_EMAIL)) {
+        $jsondat= file_get_contents("../data/json/peoples.json");
+        $jsondat= json_decode($jsondat,true);
+        
+        if(filter_var($_REQUEST["email"], FILTER_VALIDATE_EMAIL) ) {
+
             $email = $_REQUEST["email"];
+            //email existence check
+            foreach ($jsondat as $s) {
+                if($s["email"] == $email) {
+                    $redir_flag=0;
+                    $email_flag = "Email exist.change the Email";
+
+                }
+            }
        
         }else
         {
@@ -135,7 +173,7 @@ if (isset($_REQUEST["submt"])) {
     }
 
 
-    //country
+    //country validation
 
     if (!empty($_REQUEST["country"])) {
         $country = $_REQUEST["country"];
@@ -148,7 +186,7 @@ if (isset($_REQUEST["submt"])) {
 
 
     }
-    //city
+    //city validation
 
     if (!empty($_REQUEST["city"])) {
         if (!(strlen($_REQUEST["city"]) < 30 && !preg_match("/[\d]+|\s|\W/i",$_REQUEST["city"]))) {
@@ -165,7 +203,7 @@ if (isset($_REQUEST["submt"])) {
         $redir_flag=0;
 
     }
-    //address
+    //address validation
 
     if (!empty($_REQUEST["addrs"])) {
         $addrs=$_REQUEST["addrs"];
@@ -176,7 +214,7 @@ if (isset($_REQUEST["submt"])) {
 
     }
 
-    //experience
+    //experience validation
 
     if (!empty($_REQUEST["exp"])) {
         $exp=$_REQUEST["exp"] ;
@@ -186,7 +224,7 @@ if (isset($_REQUEST["submt"])) {
         $redir_flag=0;
 
     }
-    //education
+    //education validation
 
     if (!empty($_REQUEST["edu"])) {
         $edu=$_REQUEST["edu"] ;
@@ -197,7 +235,7 @@ if (isset($_REQUEST["submt"])) {
 
     }
 
-    //skill
+    //skill validation
 
     if (!empty($_REQUEST["skill"])) {
         $skill=$_REQUEST["skill"] ;
@@ -207,7 +245,7 @@ if (isset($_REQUEST["submt"])) {
         $redir_flag=0;
 
     }
-    //availability
+    //availability validation
 
     if (!empty($_REQUEST["availablity"])) {
         $availablity=$_REQUEST["availablity"] ;
@@ -219,7 +257,7 @@ if (isset($_REQUEST["submt"])) {
 
     }
 
-    //Reason
+    //Reason validation
 
 
     if (!empty($_REQUEST["reason"])) {
@@ -232,7 +270,7 @@ if (isset($_REQUEST["submt"])) {
     }
 
 
-    //Reference
+    //Reference validation
 
     if (!empty($_REQUEST["reference"])) {
         $reference=$_REQUEST["reference"] ;
@@ -244,7 +282,7 @@ if (isset($_REQUEST["submt"])) {
 
     }
 
-    //term and condition
+    //term and condition validation
 
     if (!empty($_REQUEST["terms"])) {
         $terms=$_REQUEST["terms"];
@@ -254,9 +292,11 @@ if (isset($_REQUEST["submt"])) {
         $redir_flag=0;
 
     }
-    //file upload handling
+    //uploaded file error checking
     if ($_FILES["pro_pic"]["error"]==0) {
         $pro_pic=$_FILES["pro_pic"];
+        
+        
 
     }else{
         $pro_pic_flag="Something went Wrong While Uploading";
@@ -264,6 +304,7 @@ if (isset($_REQUEST["submt"])) {
     }
     if ($_FILES["cv"]["error"]==0) {
         $cv=$_FILES["cv"];
+         
 
     }else{
         $cv_flag="Something went Wrong While Uploading";
@@ -271,6 +312,7 @@ if (isset($_REQUEST["submt"])) {
     }
     if ($_FILES["aq"]["error"]==0) {
         $aq=$_FILES["aq"];
+         
 
     }else{
         $aq_flag="Something went Wrong While Uploading";
@@ -279,28 +321,68 @@ if (isset($_REQUEST["submt"])) {
 
     if ($_FILES["cert"]["error"]==0) {
         $cert=$_FILES["cert"];
+         
         
 
     }else{
         $cert_flag="Something went Wrong While Uploading";
         $redir_flag=0;
     }
-    if($redir_flag==0){
-
-
-        
-       
-        
-    }
-
-
-
+    
 
 
 
     if($redir_flag==1)
     {
+        //uploads file because everything fine
+    $pro_pic_loc=uploadFile($pro_pic,"../uploads/Appli_Doc/".date("Y-m-d")."_".$email."/pro_pic",$email);
+    $cv_loc=uploadFile($cv,"../uploads/Appli_Doc/".date("Y-m-d")."_".$email."/cv",$email);
+    $aq_loc=uploadFile($aq,"../uploads/Appli_Doc/".date("Y-m-d")."_".$email."/aq",$email);
+    $cert_loc=uploadFile($cert,"../uploads/Appli_Doc/".date("Y-m-d")."_".$email."/cert",$email);
+   
+
+    //json save
+
+    $person = array(
+        "fname"=>$fname,
+        "lname" => $lname,
+        "dob"=> $dob,
+        "phone"=> $phone,
+        "gender" => $gender,
+        "email" => $email,
+        "country" => $country,
+        "city" => $city,
+        "addrs" => $addrs,
+        "exp" => $exp,
+        "edu" => $edu,
+        "skill" => $skill,
+        "availablity" => $availablity,
+        "reason" => $reason,
+        "reference" => $reference,
+        "terms" =>$terms,
+        "pro_pic"=>$pro_pic_loc,
+        "cv"=>$cv_loc,
+        "aq"=> $aq_loc,
+        "cert"=> $cert_loc
+        
+        
+        
+    );
+    $peoples=array() ;
+    $jsondata=file_get_contents("../data/json/peoples.json") ; //getting contents of people.json
+    $decodejsondata=json_decode( $jsondata,true ) ; //converting json data to php array
+    $peoples= $decodejsondata ;
+    $peoples[] = $person; //appending to people
+    $encodejsondata=json_encode($peoples,JSON_PRETTY_PRINT);
+    if (file_put_contents("../data/json/peoples.json",$encodejsondata)) {
+        
         redirectp("reg_success.php");
+        
+    }
+
+
+       
+       
 
     }
 
