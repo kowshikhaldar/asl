@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (isset($_SESSION["user"])) 
+{
+    header("Location: ../view/home.php");
+
+}
 
 //emptywarn() will return field can not be blank.used give blank field warning 
 function emptywarn()
@@ -11,6 +17,7 @@ function redirectp($link)
     header("Location: $link");
     exit;
 }
+
 
 //uploadFile(superglobalveriable,destination,xname=uniquely indentify) function for uploading file to specific destination
 function uploadFile($filegot,$target,$xname)
@@ -45,6 +52,10 @@ $pro_pic=$cv =$aq=$cert="";
 
 //variable for file_flag 
 $pro_pic_flag=$cv_flag =$aq_flag=$cert_flag="";
+
+//json writing failed failed 
+
+$jsonfailed="";
 
 
 
@@ -142,7 +153,7 @@ if (isset($_REQUEST["submt"])) {
     //email validation
 
     if (!empty($_REQUEST["email"])) {
-        $jsondat= file_get_contents("../data/json/peoples.json");
+        $jsondat= file_get_contents("../data/json/Applicant.json");
         $jsondat= json_decode($jsondat,true);
         
         if(filter_var($_REQUEST["email"], FILTER_VALIDATE_EMAIL) ) {
@@ -363,21 +374,30 @@ if (isset($_REQUEST["submt"])) {
         "pro_pic"=>$pro_pic_loc,
         "cv"=>$cv_loc,
         "aq"=> $aq_loc,
-        "cert"=> $cert_loc
+        "cert"=> $cert_loc,
+        "uname"=>$fname,
+        "pass"=>$lname,
+        "type"=> "admin",
+        
+        
+
+
         
         
         
     );
     $peoples=array() ;
-    $jsondata=file_get_contents("../data/json/peoples.json") ; //getting contents of people.json
+    $jsondata=file_get_contents("../data/json/Applicant.json") ; //getting contents of people.json
     $decodejsondata=json_decode( $jsondata,true ) ; //converting json data to php array
     $peoples= $decodejsondata ;
     $peoples[] = $person; //appending to people
     $encodejsondata=json_encode($peoples,JSON_PRETTY_PRINT);
-    if (file_put_contents("../data/json/peoples.json",$encodejsondata)) {
+    if (file_put_contents("../data/json/Applicant.json",$encodejsondata)) {
         
         redirectp("reg_success.php");
         
+    }{
+        $jsonfailed= "Problem while writing jSON";
     }
 
 

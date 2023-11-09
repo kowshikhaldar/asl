@@ -144,6 +144,9 @@ include "../controller/process_it_s_reg.php";
 
         </table>
     </form>
+    <?php
+    echo $jsonfailed;
+    ?>
     
 </body>
 </html>

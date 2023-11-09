@@ -1,3 +1,8 @@
+<?php 
+header("Location: it_s_log_status.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
