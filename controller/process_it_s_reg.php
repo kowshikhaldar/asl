@@ -53,8 +53,7 @@ $pro_pic=$cv =$aq=$cert="";
 //variable for file_flag 
 $pro_pic_flag=$cv_flag =$aq_flag=$cert_flag="";
 
-//json writing failed failed 
-
+//json writing failed 
 $jsonfailed="";
 
 

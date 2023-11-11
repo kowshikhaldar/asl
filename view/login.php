@@ -17,7 +17,7 @@ include("../controller/process_login.php");
 <body>
 
     <center><img src="https://www.aiub.edu/Files/Templates/NewAIUB/assets/images/aiub-logo.svg" alt="aiub-logo">
-    <h3>Login</h3>
+    <h3>It Support Login</h3>
     <form action="" method="post">
     <table>
         <td>
