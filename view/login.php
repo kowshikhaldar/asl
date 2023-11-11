@@ -25,7 +25,7 @@ include("../controller/process_login.php");
         </td>
     <tr>
         <td>Username:</td>
-        <td><input type="text" name="username" ></td>
+        <td><input type="text" name="username" value="<?php echo $cookuname; ?>"></td>
 
         </tr>
         <tr>

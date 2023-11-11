@@ -2,12 +2,21 @@
 
 session_start();
 $login_flag = "";
+$cookuname="";
 
 if (isset($_SESSION["user"])) 
 {
     header("Location: ../view/home.php");
 
-};
+}else
+{
+    //last login feature
+    if(isset($_COOKIE['uname']))
+    {
+       $cookuname=$_COOKIE['uname'];
+    }
+
+}
 
 if (isset($_REQUEST["sbmt"])) {
     
@@ -18,7 +27,8 @@ if (isset($_REQUEST["sbmt"])) {
         foreach ($decodedjson as $data) {
             if ($data["uname"] == $_REQUEST["username"] && $data["pass"] == $_REQUEST["pass"]) {
                 $_SESSION["user"] = $data;
-                print_r($data["pro_pic"]);
+                setcookie("uname", $_SESSION["user"]["uname"], time() + 60*60*24*30,"../view/login.php");
+               
                header("Location: ../view/home.php");
 
                 break;
