@@ -1,27 +1,3 @@
 [
-    {
-        "fname": "Obito",
-        "lname": "Mojito",
-        "dob": "2023-11-14",
-        "phone": "+8804343432323",
-        "gender": "male",
-        "email": "jimmy@gmil.com",
-        "country": "BD",
-        "city": "sdf",
-        "addrs": "dsfdf",
-        "exp": "dsdfs",
-        "edu": "dsfds",
-        "skill": "dsfdsfds",
-        "availablity": "morning",
-        "reason": "fsdfdsf",
-        "reference": "sdfsdfdsf",
-        "terms": "accepted",
-        "pro_pic": "..\/uploads\/Appli_Doc\/2023-11-11_jimmy@gmil.com\/pro_pic\/jimmy@gmil.comMicrosoftTeams-image.png",
-        "cv": "..\/uploads\/Appli_Doc\/2023-11-11_jimmy@gmil.com\/cv\/jimmy@gmil.comQuiz Marks_H_ Fall 23-24 Midterm_TQ1,TQ2 & LQ1.pdf",
-        "aq": "..\/uploads\/Appli_Doc\/2023-11-11_jimmy@gmil.com\/aq\/jimmy@gmil.comProject Mid.zip",
-        "cert": "..\/uploads\/Appli_Doc\/2023-11-11_jimmy@gmil.com\/cert\/jimmy@gmil.comProject Mid.zip",
-        "uname": "Obito",
-        "pass": "Mojito",
-        "type": "admin"
-    }
+    
 ]
