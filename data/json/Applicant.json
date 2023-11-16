@@ -1,3 +1,27 @@
 [
-    
+    {
+        "fname": "sakil",
+        "lname": "hossain",
+        "dob": "2023-11-17",
+        "phone": "+8804343432323",
+        "gender": "male",
+        "email": "sakil@gmil.com",
+        "country": "BD",
+        "city": "sdf",
+        "addrs": "dsfdf",
+        "exp": "dfdsf",
+        "edu": "dfsf",
+        "skill": "dfdsfd",
+        "availablity": "morning",
+        "reason": "dsfadf",
+        "reference": "dsfsdfdsf",
+        "terms": "accepted",
+        "pro_pic": "..\/uploads\/Appli_Doc\/2023-11-16_sakil@gmil.com\/pro_pic\/sakil@gmil.comimages.jpg",
+        "cv": "..\/uploads\/Appli_Doc\/2023-11-16_sakil@gmil.com\/cv\/sakil@gmil.comimg.pdf",
+        "aq": "..\/uploads\/Appli_Doc\/2023-11-16_sakil@gmil.com\/aq\/sakil@gmil.comimages.zip",
+        "cert": "..\/uploads\/Appli_Doc\/2023-11-16_sakil@gmil.com\/cert\/sakil@gmil.comimages.zip",
+        "uname": "sakil",
+        "pass": "hossain",
+        "type": "admin"
+    }
 ]

@@ -34,6 +34,11 @@ include("../controller/process_login.php");
 
         </tr>
         <tr>
+          
+            <td><input type="checkbox" name="remem" value="remember" >Remember me</td>
+
+        </tr>
+        <tr>
 
             <td><input type="submit" name="sbmt" value="Login" ></td>
 

@@ -27,7 +27,11 @@ if (isset($_REQUEST["sbmt"])) {
         foreach ($decodedjson as $data) {
             if ($data["uname"] == $_REQUEST["username"] && $data["pass"] == $_REQUEST["pass"]) {
                 $_SESSION["user"] = $data;
-                setcookie("uname", $_SESSION["user"]["uname"], time() + 60*60*24*30,"../view/login.php");
+                if(isset($_REQUEST["remem"]))
+                {
+
+                    setcookie("uname", $_SESSION["user"]["uname"], time() + 60*60*24*30,"../view/login.php");
+                }
                
                header("Location: ../view/home.php");
 
