@@ -1,0 +1,49 @@
+.table_label{
+    text-align: left;
+}
+
+
+div#body{
+    font-family: 'Lato', sans-serif;
+   
+    text-align: center;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    margin-right: 20%;
+    margin-left: 20%;
+    padding-top: 20px;
+   
+    
+    
+    
+}
+
+table{
+  
+    margin-right: auto;
+    margin-left: auto;
+
+    
+}
+
+
+td#warn{
+    text-align: center;
+}
+td#warn>div{
+    color: #842029;
+    background-color: #f8d7da;
+}
+
+
+
+input[name=userid],input[name=pass]{
+    width: 90%;
+    height: 20px;
+}
+input[name=sbmt]{
+    
+    font-size: 20px;
+    width: 100%;
+    height: 50px;
+}

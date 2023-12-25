@@ -1,0 +1,24 @@
+.actionlist{
+   
+
+    display: inline-block;
+    border: 1px solid red;
+    margin-left: 8px;
+    padding: 5px 5px 5px 5px;
+    
+}
+div.actionlist:hover{
+    cursor: pointer;
+
+}
+.td_actions{
+    text-align: center;
+}
+
+body{
+    margin-top: 80px;
+}
+
+h2#titleName{
+    text-align: center;
+}

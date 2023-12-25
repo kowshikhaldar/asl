@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("../controller/session_handle.php");
 
 ?>
@@ -8,28 +8,40 @@ include("../controller/session_handle.php");
 <html lang="en">
 
 <head>
-
+    <link rel="stylesheet" href="../css/all_userlist.css">
+    <script src="../js/all_userlist.js"></script>
+    
+    
+    
+    
 
 </head>
 
 <body>
-    <center>
-
-  
     
-            <li><a href="tech_list.php">Techer list</a></li>
-            <li><a href="st_list.php">Student list</a></li>
-            <li><a href="librarian_list.php">Librarian List</a></li>
+    <div class="userlist">
+     
+         <div onclick="gotoLink('tech_list.php')"> Teacher list </div>
+         <div onclick="gotoLink('st_list.php')">Student list </div>
+         <div onclick="gotoLink('librarian_list.php')">Librarian List</div>
+        
+         
+
+
+        <?php
+        if ($_SESSION['user']['type'] == 'admin') {
             
+             echo '<div onclick="gotoLink('."'it_s_list.php'".')" > It Support Member Lis </div>';;
 
-            <?php
-            if($_SESSION['user']['type'] == 'admin'){
-                echo '<li><a href="it_s_list.php">It Support Member List</a></li>';
+        }
+        ?>
 
-            }
-            ?>
-   
-    </center>
+
+      
+    </div>
+
+
+
 
 </body>
 

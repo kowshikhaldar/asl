@@ -1,0 +1,32 @@
+
+
+table {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    border: 1px solid black;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+
+
+
+td {
+    
+    padding: 12px;
+    text-align: left;
+   
+}
+
+th{
+    color: aliceblue;
+    padding: 12px;
+    text-align: left;
+   background-color: rgb(27, 182, 176);
+}
+
+
+
+
+

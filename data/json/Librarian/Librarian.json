@@ -1,0 +1,59 @@
+[
+    {
+        "fname": "Obito",
+        "lname": "Mojito",
+        "email": "jimmy@gmil.com",
+        "address": "dsfdf",
+        "dob": "2023-11-08",
+        "gender": "Male",
+        "experience": "dsfsdf",
+        "eduback": "88888",
+        "uname": "dsfdsf",
+        "npass": "1234",
+        "cpass": "1234",
+        "pno": "+8804343432323",
+        "type": "Libarain"
+    },
+    {
+        "fname": "Obito",
+        "lname": "sdf",
+        "email": "jimmy@gmil.com",
+        "address": "dsfdf",
+        "dob": "2023-11-16",
+        "gender": "Female",
+        "experience": "dfds",
+        "eduback": "88888",
+        "uname": "fsdfdsa",
+        "npass": "dfsdfads",
+        "cpass": "sdfdsf",
+        "pno": "+8804343432323"
+    },
+    {
+        "fname": "arghya",
+        "lname": "ami",
+        "email": "adad@gmail.com",
+        "address": "dsfdf",
+        "dob": "2023-11-09",
+        "gender": "Male",
+        "experience": "dsfsdf",
+        "eduback": "88888",
+        "uname": "fsdfdsa",
+        "npass": "321",
+        "cpass": "321",
+        "pno": "+8804343432323"
+    },
+    {
+        "fname": "sakil",
+        "lname": "hossain",
+        "email": "jimmy@gmil.com",
+        "address": "dsfdf",
+        "dob": "2023-11-10",
+        "gender": "Male",
+        "experience": "dsfsdf",
+        "eduback": "sdfdsfa",
+        "uname": "adsfdsf",
+        "npass": "12345",
+        "cpass": "12345",
+        "pno": "+8804343432323"
+    }
+]

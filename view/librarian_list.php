@@ -16,7 +16,7 @@
     <table>
     <table border="1">
         <?php
-        jsonToTable("../data/json/Applicant.json");//give the location of json data file of teacher here
+        jsonToTable("../data/json/Librarian/Librarian.json","pno","");//give the location of json data file of teacher here
         ?>
 
     </table>
