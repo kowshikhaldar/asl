@@ -54,7 +54,7 @@ class ItsDb
 
 
 
-   
+
 
 
 
@@ -127,7 +127,7 @@ class ItsDb
     }
 
 
-    function getuserByUserId($con, $TABLENAME,$userid)
+    function getuserByUserId($con, $TABLENAME, $userid)
     {
         $sql = "SELECT * FROM $TABLENAME WHERE id='$userid' ";
 
@@ -135,46 +135,85 @@ class ItsDb
         return ($con->query($sql))->fetch_assoc();
 
     }
-    
+
 
     //check email exist
 
-    function isEmailExist($con,$mail)
+    function isEmailExist($con, $mail)
     {
-        $sql="SELECT * FROM itsdb WHERE email='$mail'";
-       $result= $con->query($sql);
-       if($result->num_rows>0){
-        return true;
-       }
-       return false;
+        $sql = "SELECT * FROM itsdb WHERE email='$mail'";
+        $result = $con->query($sql);
+        if ($result->num_rows > 0) {
+            return true;
+        }
+        return false;
 
     }
 
-    
+
 
 
 
 
     //Delete User 
-    function deleteUser($con,$TABLENAME,$userid){
+    function deleteUser($con, $TABLENAME, $userid)
+    {
 
-        $sql="DELETE FROM $TABLENAME WHERE id='$userid'";
-        $result=$con->query($sql);
+        $sql = "DELETE FROM $TABLENAME WHERE id='$userid'";
+        $result = $con->query($sql);
         return $result;
 
-        
+
     }
     //Update User 
-    function updateUser(){
+    function updateUser($con, $TABLENAME, $id, $fname = "", $lname = "", $dob = "", $phone = "", $gender = "", $email = "", $country = "", $city = "", $addrs = "", $exp = "", $edu = "", $skill = "", $availability = "", $reason = "", $reference = "", $terms = "", $pro_pic = "", $cv = "", $aq = "", $cert = "", $type = "")
+    {
+
+
+
+
+        $sql = "UPDATE $TABLENAME SET
+            fname = '$fname',
+            lname = '$lname',
+            dob = '$dob',
+            phone = '$phone',
+            gender = '$gender',
+            email = '$email',
+            picture = '$pro_pic',
+            country = '$country',
+            city = '$city',
+            address = '$addrs',
+            experience = '$exp',
+            education = '$edu',
+            skills = '$skill',
+            availability = '$availability',
+            reason = '$reason',
+            reference = '$reference',
+            cv = '$cv',
+            aq = '$aq',
+            certificates = '$cert',
+            terms = '$terms',
+            type = '$type'
+        WHERE id = $id";
+
+        if ($con->query($sql)) {
+            return true;
+        } else {
+            return false;
+        }
+
 
     }
-    
+
     //sort User 
-    function sortUser(){
+    function getSortedData($con, $TABLENAME, $column_name,)
+    {
+        $sql="SELECT * FROM $TABLENAME ORDER BY $column_name ASC";
+        return $con->query($sql);
 
     }
 
-    function searchUserByName($con, $TABLENAME,$name)
+    function searchUserByName($con, $TABLENAME, $name)
     {
         $sql = "SELECT * FROM $TABLENAME WHERE name='$name' ";
 
@@ -182,10 +221,10 @@ class ItsDb
         return ($con->query($sql));
 
     }
-  
 
 
-    
+
+
 
 
     //function to close connection

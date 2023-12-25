@@ -4,9 +4,10 @@
 	<head>
 		<title>Aiub Library</title>
 		<link rel="icon" type="./image/x-icon" href="../images/aiub-logo.svg">
+		<link rel="stylesheet" href="../css/Buttons.css">
 	</head>
 	
-	
+<div class="x">
 	<body>
 		<center>
 		<a href="https://www.aiub.edu/"><img src="../images/aiub-logo.svg" alt="aiub-logo"></a><br>
@@ -15,7 +16,7 @@
 		include ("../controll/process.php");
 		?>
         
-		
+		<div class="btn_success">
 			<table  width ="1000px" >
 				<tr>
 				<th><a href="profile.php">Profile</a></th>
@@ -29,7 +30,7 @@
 				
 
 			
-			</table><br><br>
+			</table></div><br><br>
             <h1>Student Progress</h1>
 
 			<table width="500px"  border="2px">
@@ -100,4 +101,5 @@
 		
 		
 	</body>
+</div>
 </html>

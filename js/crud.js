@@ -23,6 +23,11 @@ function data_Delete(id, row) {
 }
 
 function data_Update(id, row) {
+  $(document).ready(function(){
+    
+      $("table#update").slideToggle("slow");
+    
+  });
 
     // console.log(row,"Data Update is pressed for",id);
     var xhttp = new XMLHttpRequest();
@@ -43,6 +48,8 @@ function data_Update(id, row) {
       );
       
       xhttp.send();console.log(zdata);
+
+  
   
 }
 
@@ -50,3 +57,6 @@ function member_profile(id, row) {
   window.location.href="it_s_users_profile.php?id="+id;
   console.log(row);
 }
+
+
+

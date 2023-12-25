@@ -1,0 +1,43 @@
+
+.menubar {
+   
+
+    margin-right: 5px;
+    display: inline-block;
+    height: 72%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-top: 10px;
+
+}
+
+.greet{
+    color: white;
+    
+    float: right;
+    margin-right: 5px;
+    font-family: 'Rubik Bubbles'    ;
+    font-size: 20px;
+    height: 72%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-top: 10px;
+
+
+}
+
+.menubar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: rgb(0 129 125);
+    height: 50px;
+}
+
+div.menubar:hover{
+    background-color:  rgb(1, 169, 163);
+}

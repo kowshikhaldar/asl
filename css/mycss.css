@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+/*body {
+    font-family: Arial, Helvetica, sans-serif;
+}*/
+
+
+
+.arghya {
+    background-color: rgb(14, 239, 232);
+    color: black;
+
+}
+
+.reg {
+    background-color: rgb(8, 182, 230);
+}
+
+
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgb(64, 8, 53);
+    color: rgb(231, 243, 8);
+    border: 5px solid rgb(214, 88, 88);
+    width: 500px;
+    position: relative;
+    left: 0px;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    background-color: rgb(2, 46, 60);
+    color: rgb(8, 199, 243);
+    margin-top: 10px;
+    border: 5px solid rgb(189, 146, 221);
+    width: 500px;
+    position: relative;
+    left: 450px;
+}
+
+td {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(142, 246, 194);
+    color: rgb(18, 17, 1);
+}

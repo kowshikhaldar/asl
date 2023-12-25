@@ -1,0 +1,75 @@
+
+.x{
+    background-color: rgb(75, 202, 244);
+    height: 700px;
+    padding: 2%;
+}
+
+.btn_success {
+    background-color: rgb(138, 99, 122);
+    color: rgb(215, 194, 194);
+    width: 1000px;
+}
+
+.btn_success:hover {
+    background-color: rgba(5, 115, 64, 1);
+}
+
+.btn_danger {
+    background-color: rgba(220, 53, 69, 1);
+    color: white;
+}
+
+.btn_danger:hover {
+    background-color: rgba(200, 33, 49, 1);
+}
+
+.btn_warning {
+    background-color: rgba(255, 193, 7, 1);
+    color: black;
+}
+
+.btn_warning:hover {
+    background-color: rgba(235, 173, 0, 1);
+}
+
+.btn_info {
+    background-color: rgba(61, 213, 243, 1);
+    color: black;
+}
+
+.btn_info:hover {
+    background-color: rgba(41, 193, 223, 1);
+}
+
+.btn_light {
+    background-color: rgba(248, 249, 250, 1);
+    color: black;
+}
+
+.btn_light:hover {
+    background-color: rgba(228, 229, 230, 1);
+}
+
+.btn_dark {
+    background-color: rgba(33, 37, 41, 1);
+    color: white;
+}
+
+.btn_dark:hover {
+    background-color: rgb(53, 71, 87);
+    color: rgb(195, 195, 195);
+}
+
+
+.allbutton {
+    border-color: transparent;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 4%;
+}
+
+
+
+

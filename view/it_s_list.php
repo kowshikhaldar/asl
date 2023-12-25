@@ -17,8 +17,10 @@ include("../view/menubar.php");
     <link rel="stylesheet" href="../css/table_data.css">
     <link rel="stylesheet" href="../css/it_s_list.css">
     <link rel="stylesheet" href="../css/Buttons.css">
+    <link rel="stylesheet" href="../css/hide_update_profile.css">
     <script src="../js/crud.js"></script>
     <script src="../js/jquery/jquery-3.7.1.min.js"></script>
+
 
 </head>
 
@@ -166,6 +168,7 @@ include("../view/menubar.php");
                     <div class="">
 
                         <input type="submit" value="Submit" id="submt" class="btn_success submit" name="submt">
+                       
 
                     </div>
                 </td>
