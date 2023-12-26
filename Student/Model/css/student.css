@@ -1,0 +1,63 @@
+.profilemenubar{
+    overflow: hidden;
+}
+
+.aboutyou{
+    margin-top: 25px;
+}
+
+.profilemenubar ul li{
+    background-color: rgb(180, 202, 194);
+    padding: 16px 20px;
+    border-radius: 5px 0px 0px 0px;
+    margin-bottom: 5px;
+    list-style-type: none;
+    width: 28.5%;
+    float: left;
+    text-align: center;
+}
+
+.profilemenubar ul li:last-child{
+    border-radius: 0px 5px 0px 0px;
+}
+
+.profilemenubar ul li:nth-of-type(2){
+    border-radius: 0px 0px 0px 0px;
+}
+
+.profilemenubar ul li a{
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    color: green;
+	cursor: pointer;
+}
+
+.selleradd {
+    margin: 30px 10px 10px 20px;
+}
+
+.selleradd form input,select {
+    width: 100%;
+    padding: 10px;
+    /* border-radius: 5px; */
+    outline: none;
+    border: navajowhite;
+    border-bottom: 1px solid #222;
+    border-bottom: 1;
+    font-size: 16px;
+    color: #444;
+}
+
+span {
+    position: relative;
+    left: 700px;
+    top: -26px;
+}
+
+.selleradd table, tr, th, td {
+    /* border: none; */
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+}
